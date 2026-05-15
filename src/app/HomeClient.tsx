@@ -14,29 +14,14 @@ interface HomeClientProps {
 
 export default function HomeClient({ initialProjects, initialTestimonials }: HomeClientProps) {
   return (
-    <div>
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="min-h-screen"
-    >
-      {/* Left Content Column */}
+    <div className="flex flex-col bg-bg">
       <Hero />
-
-      {/* Right Content Column */}
-      <section className="flex-1 bg-[#080808] p-8 md:p-16 flex flex-col gap-12 overflow-y-auto custom-scrollbar">
-        {/* Interactive Assistant */}
-
-        {/* Selected Projects */}
-      </section>
-
-    </motion.div>
-    <section>
-        <FeaturedProjects projects={initialProjects} />
-
-        {/* Testimonials Section */}
-        <Testimonials testimonials={initialTestimonials} />
-
+      
+      <section className="px-6 lg:px-10 py-32 bg-[#080808] border-t border-border">
+        <div className="max-w-[1290px] mx-auto space-y-40">
+          <FeaturedProjects projects={initialProjects} />
+          <Testimonials testimonials={initialTestimonials} />
+        </div>
       </section>
     </div>
   );
