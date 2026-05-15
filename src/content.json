@@ -1,0 +1,133 @@
+{
+  "profile": {
+    "name": "Ali Raza",
+    "role": "Full Stack Developer",
+    "experience": "5+ years in web development, specializing in React, Node.js, and modern cloud architectures.",
+    "bio": "I am a passionate developer dedicated to building high-quality, scalable web applications. My expertise lies in creating seamless user experiences using the latest frontend and backend technologies.",
+    "skills": ["React/Next.js", "Node.js/Express", "TypeScript", "MySQL/PostgreSQL", "Tailwind CSS", "Cloud Solutions"],
+    "softSkills": ["Agile Leadership", "Cross-functional Collaboration", "Technical Mentorship", "Stakeholder Communication", "Strategic Planning", "User-Centric Empathy"]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "A full-featured online store with payment integration and real-time inventory management.",
+      "caseStudy": "This project involved building a highly scalable e-commerce infrastructure capable of handling thousands of requests per second. We implemented a microservices architecture for the backend and a responsive Next.js frontend for optimal performance.",
+      "softContributions": "Led a team of 4 developers, established CI/CD protocols, and facilitated bi-weekly stakeholder reviews to ensure alignment with business goals.",
+      "role": "Lead Backend & Infrastructure",
+      "duration": "6 Months",
+      "technologies": ["Next.js", "MySQL", "Stripe", "Tailwind"],
+      "image": "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1454165833767-02654a595061?auto=format&fit=crop&q=80&w=800"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "AI Task Manager",
+      "description": "Smart task management app that uses AI to prioritize and categorize user tasks.",
+      "caseStudy": "The challenge was to create a task manager that feels 'alive'. Using Gemini AI, we built a system that analyzes user habits and suggests task prioritizations in real-time. The backend leverages PostgreSQL for relational data and Redis for caching.",
+      "softContributions": "Collaborated directly with UI designers to refine AI feedback loops based on user testing sessions. Mentored junior devs on implementing vector search.",
+      "role": "Full Stack Developer",
+      "duration": "3 Months",
+      "technologies": ["React", "Express", "Gemini AI", "PostgreSQL"],
+      "image": "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&q=80&w=800",
+      "gallery": [
+        "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Portfolio Website",
+      "description": "A clean and modern portfolio showcasing personal achievements and services.",
+      "caseStudy": "Built with speed and aesthetic in mind, this portfolio utilizes Vite for rapid development and Framer Motion for high-fidelity animations. The design follows a strict split-layout SaaS aesthetic.",
+      "softContributions": "Implemented a modular component architecture that allows for easy content updates. Optimized for SEO and performance achieving 100 on Lighthouse.",
+      "role": "UI/UX Designer & Developer",
+      "duration": "1 Month",
+      "technologies": ["Vite", "React", "Framer Motion"],
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+      "gallery": [
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Web Development",
+      "icon": "Code2",
+      "description": "Building responsive and scalable websites using modern frameworks.",
+      "longDescription": "I specialize in creating high-performance, accessible, and scalable web applications. My approach focuses on clean architecture and modern technology stacks to ensure your digital presence is future-proof.",
+      "features": [
+        "React & Next.js Implementation",
+        "Performance Optimization",
+        "Responsive Grid Layouts",
+        "SEO Best Practices"
+      ],
+      "benefits": [
+        "Faster page load speeds",
+        "Improved search engine rankings",
+        "Seamless user experience across all devices"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "UI/UX Design",
+      "icon": "Laptop",
+      "description": "Creating intuitive and visually appealing user interfaces.",
+      "longDescription": "Design is more than just aesthetics; it's about solving problems. I create design systems that are both beautiful and functional, focusing on user journeys that convert and delight.",
+      "features": [
+        "High-Fidelity Prototyping",
+        "User Journey Mapping",
+        "Custom Design Systems",
+        "Interaction Design"
+      ],
+      "benefits": [
+        "Increased user engagement",
+        "Reduced bounce rates",
+        "Stronger brand identity"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "API Development",
+      "icon": "Shield",
+      "description": "Developing robust and secure backend APIs for various applications.",
+      "longDescription": "The backbone of any modern application is its API. I build secure, documented, and high-available backend systems that can power web, mobile, and third-party integrations.",
+      "features": [
+        "RESTful & GraphQL Architectures",
+        "Node.js & Express Security",
+        "Database Schema Design",
+        "Authentication & Authorization"
+      ],
+      "benefits": [
+        "Scalable backend infrastructure",
+        "Secure data handling",
+        "Easy third-party integrations"
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Sarah Jenkins",
+      "role": "CEO at TechFlow",
+      "text": "Ali's ability to translate complex requirements into elegant, high-performance code is unmatched. He delivered our platform ahead of schedule."
+    },
+    {
+      "id": 2,
+      "name": "Michael Chen",
+      "role": "Founder of StreamLine",
+      "text": "Working with Ali was a game-changer. His expertise in full-stack engineering and AI integration helped us scale our user base by 300% in six months."
+    },
+    {
+      "id": 3,
+      "name": "Emma Rodriguez",
+      "role": "Product Manager at Nexus",
+      "text": "The custom design system Ali built for us has significantly reduced our development overhead. Truly a visionary developer."
+    }
+  ]
+}

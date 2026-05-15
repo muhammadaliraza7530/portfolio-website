@@ -1,0 +1,6 @@
+{
+  "name": "Ali Raza Portfolio",
+  "description": "A modern, responsive portfolio website for Ali Raza featuring a clean design, projects showcase, services, contact form, and an AI-powered RAG chatbot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
