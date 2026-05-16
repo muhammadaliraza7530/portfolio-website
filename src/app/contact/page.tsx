@@ -188,7 +188,7 @@ export default function Contact() {
                </div>
                <div>
                   <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/30 mb-2">Voice</h3>
-                  <p className="text-lg font-medium">+92 300 0000000</p>
+                  <p className="text-lg font-medium">+92 3284034512</p>
                </div>
              </div>
              <div className="flex items-start space-x-8">
