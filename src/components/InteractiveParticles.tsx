@@ -1,17 +1,17 @@
-'''"use client";
+"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type Container, type ISourceOptions } from "@tsparticles/engine";
-// import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`,
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`
+import { loadSlim } from "@tsparticles/slim";
+import { cn } from "../lib/utils";
 
 export const InteractiveParticles = () => {
   const [init, setInit] = useState(false);
 
+  // Simple and direct initialization
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // await loadAll(engine);
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
@@ -19,16 +19,11 @@ export const InteractiveParticles = () => {
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
+    console.log("Particles container loaded", container);
   };
 
   const options: ISourceOptions = useMemo(
     () => ({
-      background: {
-        color: {
-          value: "#000000",
-        },
-      },
       fpsLimit: 60,
       interactivity: {
         events: {
@@ -46,7 +41,7 @@ export const InteractiveParticles = () => {
             quantity: 4,
           },
           repulse: {
-            distance: 200,
+            distance: 150,
             duration: 0.4,
           },
         },
@@ -56,10 +51,10 @@ export const InteractiveParticles = () => {
           value: "#ffffff",
         },
         links: {
-          color: "#ffffff",
+          color: "#0070f3", // Premium Blue line matching Ali Raza Coder logo
           distance: 150,
           enable: true,
-          opacity: 0.5,
+          opacity: 0.4,
           width: 1,
         },
         move: {
@@ -69,14 +64,16 @@ export const InteractiveParticles = () => {
             default: "bounce",
           },
           random: false,
-          speed: 2,
+          speed: 1.5,
           straight: false,
         },
         number: {
           density: {
             enable: true,
+            width: 800,
+            height: 800,
           },
-          value: 80,
+          value: 65,
         },
         opacity: {
           value: 0.5,
@@ -85,7 +82,7 @@ export const InteractiveParticles = () => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 1, max: 3 },
         },
       },
       detectRetina: true,
@@ -94,15 +91,16 @@ export const InteractiveParticles = () => {
   );
 
   if (!init) {
-    return null;
+    return <div className={cn('absolute', 'inset-0', 'bg-black', '-z-10')} />;
   }
 
   return (
-    <Particles
-      id="tsparticles"
-      particlesLoaded={particlesLoaded}
-      options={options}
-      className="absolute inset-0 -z-10"
-    />
+    <div className={cn('absolute', 'inset-0', '-z-10', 'overflow-hidden')}>
+      <Particles
+        id="tsparticles"
+        particlesLoaded={particlesLoaded}
+        options={options}
+      />
+    </div>
   );
-};'''
+};
