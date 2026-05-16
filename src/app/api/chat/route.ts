@@ -1,58 +1,44 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { getContent } from "@/lib/data";
-import { getAIClient, buildSystemInstruction } from "@/lib/gemini";
+import { buildSystemInstruction, generateChatResponse } from "@/lib/gemini";
 
-export async function POST(request: NextRequest) {
+// Next.js ko batane ke liye ke yeh route dynamic chalna chahiye
+export const dynamic = "force-dynamic";
+
+export async function POST(req: Request) {
   try {
-    const { message, history } = await request.json();
+    const { message, history } = await req.json();
 
-    // 1. Content fetch karein
-    const content = await getContent();
-    
-    // 2. AI Client setup karein
-    const genAI = getAIClient();
-    const model = genAI.getGenerativeModel({ 
-      model: "gemini-1.5-flash", // Note: gemini-3-flash agar available na ho toh ye stable version hai
-      systemInstruction: buildSystemInstruction(content)
-    });
-    
-    // 3. Chat history format karein
-    const chat = model.startChat({
-      history: history?.map((m: any) => ({
-        role: m.role === 'user' ? 'user' : 'model',
-        parts: [{ text: m.parts?.[0]?.text || m.content || "" }]
-      })) || [],
-    });
-
-    // 4. Message bhejein
-    const result = await chat.sendMessage(message);
-    const response = await result.response;
-    const text = response.text();
-    
-    if (!text) {
-      throw new Error("AI ne koi jawab nahi diya");
-    }
-
-    return NextResponse.json({ text });
-
-  } catch (error: any) {
-    console.error("Chat API error details:", error);
-
-    // Rate Limit (Quota) Error Handling
-    if (error.status === 429 || error.message?.includes("429") || error.message?.includes("quota")) {
+    if (!message || typeof message !== "string") {
       return NextResponse.json(
-        { 
-          error: "API Quota exceeded. Aapki rozana ki limit khatam ho chuki hai. Baraye meherbani kal koshish karein ya billing check karein.",
-          code: "QUOTA_EXCEEDED"
-        }, 
-        { status: 429 }
+        { error: "Invalid message format." },
+        { status: 400 }
       );
     }
 
-    // Generic Error
-    const errorMessage = error instanceof Error ? error.message : "AI communication failed";
+    // 1. Fetch dynamic content to build the system instruction
+    const content = await getContent();
+    const systemInstruction = buildSystemInstruction(content);
+
+    // 2. Generate chat response using the gemini library
+    const responseText = await generateChatResponse(
+      message,
+      history,
+      systemInstruction
+    );
+
+    // 3. Return a clean, successful response
+    return NextResponse.json({ text: responseText });
+  } catch (error) {
+    // 4. Handle errors gracefully
+    console.error("Chat API Error:", error);
     return NextResponse.json(
-      { error: errorMessage }, 
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "An unexpected error occurred.",
+      },
       { status: 500 }
     );
   }

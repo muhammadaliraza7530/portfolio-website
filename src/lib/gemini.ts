@@ -1,26 +1,38 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 
-export const getAIClient = () => {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    throw new Error("GEMINI_API_KEY is not defined.");
+// Pehle check karein ke key sahi se load ho bhi rahi hai ya nahi
+const apiKey = process.env.GEMINI_API_KEY_1;
+
+if (!apiKey) {
+  console.log("CRITICAL WARNING: GEMINI_API_KEY_1 is undefined inside gemini.ts");
+}
+
+// Instance ko hamesha check ke sath initialize karein
+export const ai = new GoogleGenAI({
+  apiKey: apiKey || "",
+});
+
+export function buildSystemInstruction(content: any): string {
+  return `You are AliBot, an AI assistant for Ali Raza's portfolio. Content: ${JSON.stringify(content)}`;
+}
+
+export async function generateChatResponse(message: string, history: any[] = [], systemInstruction: string = "") {
+  if (!process.env.GEMINI_API_KEY_1) {
+    throw new Error("API Key is missing from process.env");
   }
-  return new GoogleGenerativeAI(apiKey);
-};
 
-export const buildSystemInstruction = (content: any) => {
-  return `
-    You are an AI assistant for Ali Raza's portfolio. Respond concisely and professionally.
-    
-    NAME: ${content.profile.name}
-    ROLE: ${content.profile.role}
-    BIO: ${content.profile.bio}
-    SKILLS: ${content.profile.skills.join(", ")}
-    
-    PROJECTS:
-    ${content.projects.map((p: any) => `- ${p.title}: ${p.description}`).join("\n")}
-    
-    SERVICES:
-    ${content.services.map((s: any) => `- ${s.title}: ${s.description}`).join("\n")}
-  `;
-};
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash", 
+      contents: message,
+      config: systemInstruction ? {
+        systemInstruction: systemInstruction
+      } : undefined
+    });
+
+    return response.text;
+  } catch (error) {
+    console.error("Gemini API direct call failed:", error);
+    throw error;
+  }
+}

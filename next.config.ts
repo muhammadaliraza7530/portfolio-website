@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  allowedDevOrigins: ['3000-firebase-protfolio-1778831589519.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev'],
 };
 
 export default nextConfig;

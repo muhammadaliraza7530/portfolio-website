@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 interface NavLinkProps {
   href: string;
@@ -13,16 +13,8 @@ interface NavLinkProps {
 
 export default function NavLink({ href, children, isActive, onClick, className }: NavLinkProps) {
   return (
-    <Link
-      href={href}
-      onClick={onClick}
-      className={cn(
-        "text-[14px] font-[500] uppercase tracking-[0.10em] transition-colors hover:text-accent",
-        isActive ? "text-accent" : "text-white",
-        className
-      )}
-    >
-      {children}
+    <Link href={href} className={cn('text-[14px] font-[500] uppercase tracking-[0.10em] transition-colors hover:text-accent', isActive ? 'text-accent' : 'text-white', className)}>
+      <span onClick={onClick}>{children}</span>
     </Link>
   );
 }
