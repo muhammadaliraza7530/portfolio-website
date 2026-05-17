@@ -17,7 +17,7 @@ export default function HomeClient({ initialProjects, initialTestimonials }: Hom
     <div className='flex flex-col bg-bg'>
       <Hero />
 
-      <section className='px-6 lg:px-10 py-32 bg-[#080808] border-border'>
+      <section className='px-6 lg:px-10 py-5 bg-[#080808] border-border'>
         <div className='max-w-[1290px] mx-auto space-y-40'>
           <FeaturedProjects projects={initialProjects} />
           <Testimonials testimonials={initialTestimonials} />

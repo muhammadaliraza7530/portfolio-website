@@ -41,17 +41,18 @@ export default function ProjectsClient({ initialProjects }: ProjectsClientProps)
                   src={project.image}
                   alt={project.title}
                   fill
+                  unoptimized
                   className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale hover:grayscale-0"
                   referrerPolicy="no-referrer"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="p-10">
+              <div className="p-5">
                 <h3 className="text-xl font-bold mb-4 tracking-tight">{project.title}</h3>
-                <p className="text-sm text-text-dim mb-8 line-clamp-2 leading-relaxed font-medium">
+                <p className="text-sm text-text-dim mb-5 line-clamp-2 leading-relaxed font-medium">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-8">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {project.technologies.slice(0, 3).map((tech) => (
                     <span key={tech} className="text-[9px] uppercase tracking-[0.15em] font-bold px-3 py-1.5 bg-white/5 border border-border rounded-full text-white/40">
                       {tech}

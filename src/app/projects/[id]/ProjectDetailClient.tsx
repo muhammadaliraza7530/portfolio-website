@@ -65,7 +65,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               </div>
             </div>
 
-            <a href="#" className="inline-flex items-center space-x-3 px-8 py-4 bg-white text-bg rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white/90 transition-all shadow-xl hover:shadow-white/5">
+            <a href="https://shawarmastop-aliraza-main.vercel.app/" target="_blank" className="inline-flex items-center space-x-3 px-8 py-4 bg-white text-bg rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white/90 transition-all shadow-xl hover:shadow-white/5">
               <span>Launch Site</span>
               <ExternalLink size={14} />
             </a>
@@ -74,13 +74,13 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="rounded-[2.5rem] overflow-hidden border border-border shadow-2xl relative aspect-[4/5]"
+            className="rounded-[2.5rem] overflow-hidden shadow-2xl relative aspect-[4/5]"
           >
             <Image 
               src={project.image} 
               alt={project.title} 
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+              className="object-contain  hover:grayscale-0 transition-all duration-700" 
               referrerPolicy="no-referrer"
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -104,7 +104,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                    src={img} 
                    alt={`${project.title} view ${i + 1}`} 
                    fill
-                   className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale hover:grayscale-0"
+                   className="object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale hover:grayscale-0"
                    referrerPolicy="no-referrer"
                    sizes="(max-width: 768px) 100vw, 50vw"
                  />
