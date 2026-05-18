@@ -30,6 +30,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  allowedDevOrigins: ['3000-firebase-portfolio-website-1779003503975.cluster-qxqlf3vb3nbf2r42l5qfoebdry.cloudworkstations.dev'],
+  allowedDevOrigins: ['3000-firebase-portfolio-website-1779075455717.cluster-va5f6x3wzzh4stde63ddr3qgge.cloudworkstations.dev'],
   };
 export default nextConfig;

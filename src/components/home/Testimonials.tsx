@@ -26,9 +26,9 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
 
   return (
     <div className="space-y-6">
-      <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-text-dim block border-b border-border pb-4">
+      <h2 className="text-[19px] text-center tracking-[0.1em] font-bold text-white border-b border-border pb-4">
         Client Testimonials
-      </span>
+      </h2>
       <div className="relative h-56 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div

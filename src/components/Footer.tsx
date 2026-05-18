@@ -11,7 +11,7 @@ export default function Footer() {
               ALI RAZA
             </Link>
             <p className="text-text-dim max-w-sm text-sm leading-relaxed">
-              Specializing in building high-performance web architectures and AI-driven user experiences. I bridge the gap between technical complexity and intuitive design.
+            As a dedicated Full Stack Developer, I craft end-to-end web architectures that balance powerful backend logic with sleek, responsive frontends. My technical toolkit includes React, Next.js, Tailwind CSS, Node.js, and both SQL/NoSQL databases. I am particularly skilled in creating intelligent web applications by integrating advanced AI models (like Gemini API) and implementing dynamic, interactive components. I thrive on solving complex problems and transforming innovative ideas into production-ready software.
             </p>
           </div>
           

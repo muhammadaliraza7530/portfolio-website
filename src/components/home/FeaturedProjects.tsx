@@ -30,20 +30,20 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                 alt={project.title}
                 fill
                 unoptimized
-                className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale hover:grayscale-0"
+                className="object-cover group-hover:opacity-100 group-hover:scale-105 transition-all duration-700  hover:grayscale-0"
                 referrerPolicy="no-referrer"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
 
-            <div className="p-10">
+            <div className="p-5">
               <h3 className="text-xl font-bold mb-4 tracking-tight group-hover:text-accent transition-colors">
                 {project.title}
               </h3>
-              <p className="text-sm text-text-dim mb-8 line-clamp-2 leading-relaxed font-medium">
+              <p className="text-sm text-text-dim mb-5 line-clamp-2 leading-relaxed font-medium">
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-2 mb-5">
                 {project.technologies.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
@@ -63,9 +63,9 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
           </Link>
         ))}
       </div>
-      <Link href="/projects" className="inline-flex items-center space-x-2 text-[10px] uppercase font-bold tracking-widest text-accent hover:text-white transition-colors group">
-        <span>View All Work</span>
-        <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
+      <Link href="/projects" className="inline-flex items-center  space-x-2 text-[18px] font-bold tracking-normal text-accent hover:text-white transition-colors group">
+        <span className="items-center">View All Work</span>
+        <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />
       </Link>
     </div>
   );

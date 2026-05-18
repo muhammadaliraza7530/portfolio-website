@@ -18,7 +18,7 @@ export default function HomeClient({ initialProjects, initialTestimonials }: Hom
       <Hero />
 
       <section className='px-6 lg:px-10 py-5 bg-[#080808] border-border'>
-        <div className='max-w-[1290px] mx-auto space-y-40'>
+        <div className='max-w-[1290px] mx-auto space-y-15'>
           <FeaturedProjects projects={initialProjects} />
           <Testimonials testimonials={initialTestimonials} />
         </div>
